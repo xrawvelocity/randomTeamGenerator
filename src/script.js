@@ -37,5 +37,25 @@
     names = [...form.teamNames.value.split(', ')];
     noPerTeam = form.teamNumbers.value;
 
+    let round = 0;
 
+    if (names){
+      if (names.length % noPerTeam === 0){
+        round = (names.length / noPerTeam);
+      } else {
+        round = (names.length / noPerTeam);
+      }
+    }
 
+    let noOfTeams = Math.floor(round);
+    var totalTeams = Math.ceil(names.length/noOfTeams);  
+    
+    var i,j,temparray,piece = totalTeams;
+    for (i = 0, j= names.length; i<=j; i+=piece) {
+        temparray = names.slice(i,i+piece);
+        console.log(temparray);
+    }
+    console.log(noOfTeams);
+    console.log(round);
+  
+  };
