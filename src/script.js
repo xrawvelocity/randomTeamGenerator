@@ -1,57 +1,59 @@
 /*jshint esversion: 9*/
   
-  let names = [];
-  let noperTeam;
+
+  /* VARIABLES */
+  let namesArray = [];
+  let peoplePerTeam, numOfTeams, html;
   let round = 0;
   let bigArray = [];
 
+  /* DOM VARIABLES */
   let form = document.getElementById('team-form');
   let result = document.querySelector('.result');
-  let table = document.querySelector('.table');
+  let table = document.querySelectorAll('.table');
 
+
+  //when the button is clicked do this
   form.onsubmit = e => {
+
+    //dont clear values of inputs
     e.preventDefault();
-    names = [...form.teamNames.value.split(', ')];
-    noPerTeam = form.teamNumbers.value;
 
+    //get input into variables
+    namesArray = [...form.teamNames.value.split(', ')];
+    peoplePerTeam = form.teamNumbers.value;
     
-  
+    numOfTeams = Math.floor(namesArray.length / peoplePerTeam);
 
-    if (names){
-      if (names.length % noPerTeam === 0){
-        round = (names.length / noPerTeam);
-      } else {
-        round = (names.length / noPerTeam);
-      }
-    }
 
-    let noOfTeams = Math.floor(round);
-    var totalTeams = (names.length/noOfTeams);  
+    var totalTeams = (namesArray.length/numOfTeams);  
 
     var i,j,temparray,piece = totalTeams;
-    for (i = 0, j= names.length; i<j; i+=piece) {
-        temparray = names.slice(i,i+piece);
+    for (i = 0, j= namesArray.length; i<j; i+=piece) {
+        temparray = namesArray.slice(i,i+piece);
         bigArray.push(temparray);
     }
-    let html;
-    table.parentElement.removeChild(table);
+    //if(table) table.parentNode.removeChild(table);
+
+    table.forEach(e => e.parentNode.removeChild(e));
 
     for(i = 0; i < bigArray.length; i++){
     html = `
     <table class="table">
       <thead><th>Team %num%</th></thead>
-      ${'<tr><td>%name%</td></tr>'.repeat(bigArray[i].length)}
+      ${'<tr><td>%name%</td></tr>'.repeat(3)}
     </table>
-    `;
+    `.repeat(3);
 
-    let newhtml = html.replace('%num%', '2');
+    let newhtml = html.replace('%num%', i);
     newhtml = newhtml.replace('%name%', bigArray[0][1]);
     result.insertAdjacentHTML("beforeend", newhtml);
     }
-    console.log(html);
 
-  
-    
+
+
+    /* TESTING */
+    console.log(html);
     
     console.log(bigArray);
   
