@@ -48,7 +48,7 @@
     }
 
     let noOfTeams = Math.floor(round);
-    var totalTeams = Math.ceil(names.length/noOfTeams);  
+    var totalTeams = (names.length/noOfTeams);  
     
     var i,j,temparray,piece = totalTeams;
     for (i = 0, j= names.length; i<=j; i+=piece) {
