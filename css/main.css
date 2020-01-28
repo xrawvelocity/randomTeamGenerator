@@ -77,15 +77,24 @@ body {
     color: #ddd;
     margin: 4rem;
     font-size: 4rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    grid-gap: 6rem;
 }
 
 .result table {
     margin: 2rem;
     background-color: #fff;
     color: #141e30;
+    height: 50%;
     
 }
 .result table thead {
     border-bottom: 1px solid #141e30;
+}
+
+.copy {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 1.5rem;
 }
