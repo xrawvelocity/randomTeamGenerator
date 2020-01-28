@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Team Gen</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1 class="heading-1">Random Team Generator</h1>
+    <form id="team-form">
+        <input type="text" name="teamNames" id="textBox" placeholder="Write all the names here separated by commas" required>
+        <input type="number" id="team-numbers" name="teamNumbers" min="1" max="5" placeholder="People per team. Min: 1, Max: 5." required>
+        <input type="submit" value="Make Teams" id="team-btn">
+    </form>
+    <div class="result">
+        <table>
+            <thead><th>Team %num%</th></thead>
+            <tr><td>%name%</td></tr>
+            <tr><td>%name%</td></tr>
+            <tr><td>%name%</td></tr>
+        </table>
+        <table>
+            <thead><th>Team %num%</th></thead>
+            <tr><td>%name%</td></tr>
+            <tr><td>%name%</td></tr>
+            <tr><td>%name%</td></tr>
+        </table>
+    </div>
+    <script src="src/script.js"></script>
+</body>
+</html>

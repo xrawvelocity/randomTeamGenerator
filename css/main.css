@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to right, #243b55, #141e30);
+}
+
+.heading-1 {
+    font-size: 4rem;
+    margin: 40rem auto 5rem auto;
+    color: #eee;
+    
+}
+
+#team-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#team-form > * {
+    margin: 2.5rem;
+    border-radius: 0;
+    border: none;
+    padding: 1.4rem;
+    background-color: #ddd;
+    transition: background-color .2s, width .5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#team-form > *:focus:not(:last-child){
+    background-color: #fff;
+}
+
+
+
+#textBox {
+    width: 100rem;
+}
+#textBox:hover,
+#textBox:valid {
+    width: 110rem;
+}
+
+
+
+#team-numbers {
+    width: 50rem;
+}
+#team-numbers:hover,
+#team-numbers:valid {
+    width: 60rem;
+}
+
+
+
+#team-btn {
+    width: 15rem;
+    transition: all .3s;
+}
+#team-btn:hover{
+    background-color: #fff;
+    transform: translateY(-.4rem) scale(1.2);
+}
+
+.result {
+    color: #ddd;
+    margin: 4rem;
+    font-size: 4rem;
+    display: flex;
+}
+
+.result table {
+    margin: 2rem;
+    background-color: #fff;
+    color: #141e30;
+    
+}
+.result table thead {
+    border-bottom: 1px solid #141e30;
+}
