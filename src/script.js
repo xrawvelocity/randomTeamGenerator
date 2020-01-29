@@ -45,11 +45,11 @@
     html = `
     <table class="table">
       <thead><th>Team %num%</th></thead>
-      ${'<tr><td>%name%</td></tr>'.repeat(3)}
+      ${'<tr><td>%name%</td></tr>'.repeat(peoplePerTeam)}
     </table>
-    `.repeat(numOfTeams);
+    `;
 
-    let newhtml = html.replace('%num%', i);
+    let newhtml = html.replace('%num%', i + 1 );
     newhtml = newhtml.replace('%name%', bigArray[0][1]);
     result.insertAdjacentHTML("beforeend", newhtml);
     }
@@ -59,7 +59,7 @@
     /* TESTING */
     //console.log(html);
     
-    //console.log(bigArray);
+    console.log(bigArray);
   
   };
 
@@ -68,6 +68,8 @@
 
 reset.onclick = e => {
   result.innerHTML = '';
+  namesArray = [];
+  bigArray = [];
   heading.style.margin = '40rem auto 5rem auto';
   console.log('working');
 };
