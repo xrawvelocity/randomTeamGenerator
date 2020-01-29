@@ -27,7 +27,7 @@
 
 
     //get input into variables
-    namesArray = [...form.teamNames.value.split(',')];
+    namesArray = [...form.teamNames.value.split(', ')];
     peoplePerTeam = form.teamNumbers.value;
     
 
@@ -43,21 +43,19 @@
     }
 
     ////////////////
-    };
     for(i = 0; i < bigArray.length; i++){
-      //for(x = 0; x < bigArray[i].length; x++){
-        name2 = `<tr id="name"><td>${bigArray[i].join('</td></tr><tr id="name"><td>')}</td></tr>`;
+      for(x = 0; x < bigArray[i].length; x++){
+        name2 = `<tr id="name"><td>${bigArray[i][x]}</td></tr>`;
         html = `
           <table class="table">
             <thead><th>Team %num%</th></thead>
-              ${name2}
+            ${name2.repeat(bigArray[i].length)}
           </table>
           `;
         
         console.log(name2);
-            // ${name2.repeat(bigArray[i].length)}
         
-      //}
+      }
       //${'<tr id="name"><td>%name%</td></tr>'.repeat(bigArray[i].length)}
 
     let newhtml = html.replace('%num%', i + 1 );
@@ -72,8 +70,11 @@
     /* TESTING */
     //console.log(html);
     
+    console.log(bigArray);
     
   
+  };
+
 
 /* when the 'reset' button is clicked do this */
 
@@ -87,6 +88,7 @@ reset.onclick = e => {
 
 document.addEventListener('click', e => {
   if(e.target.parentElement.className == 'table'){
-    console.log(e.target.children[1].children);
+  console.log(e.target.children[1].children);
+
   }
 });
