@@ -32,7 +32,6 @@
     
     numOfTeams = Math.floor(namesArray.length / peoplePerTeam);
 
-
     var totalTeams = (namesArray.length/numOfTeams);  
 
     var temparray,piece = totalTeams;
@@ -43,6 +42,7 @@
         temparray = namesArray.slice(i,i+piece);
         bigArray.push(temparray);
     }
+
     }
     for(i = 0; i < bigArray.length; i++){
     html = `

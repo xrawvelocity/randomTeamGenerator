@@ -66,9 +66,6 @@ body {
     display: flex;
     justify-content: center;
 }
-.reset {
-    
-}
 
 #team-btn,
 .reset {
@@ -91,7 +88,7 @@ body {
     margin: 4rem;
     font-size: 4rem;
     display: grid;
-    grid-template-columns: repeat(autofit, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     /* repeat(auto-fit, minmax(32rem, 1fr)); */
     grid-gap: 6rem;
     align-items: center;
@@ -102,10 +99,13 @@ body {
     background-color: #fff;
     color: #141e30;
     height: 50%;
-    
+    padding: 2rem;
+    text-align: center;
 }
-.result table thead {
-    border-bottom: 1px solid #141e30;
+
+.result table thead th {
+    border-bottom: 2px solid #111;
+    
 }
 
 .copy {
