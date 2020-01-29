@@ -47,19 +47,17 @@ body {
 #textBox {
     width: 100rem;
 }
-#textBox:hover,
-#textBox:valid {
+#textBox:hover {
     width: 110rem;
 }
 
 
 
 #team-numbers {
-    width: 50rem;
+    width: 35rem;
 }
-#team-numbers:hover,
-#team-numbers:valid {
-    width: 60rem;
+#team-numbers:hover {
+    width: 40rem;
 }
 
 .test{
@@ -75,7 +73,7 @@ body {
     border: none;
     padding: 1.4rem;
     background-color: #ddd;
-    transition: background-color .2s, width .5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all .3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 #team-btn:hover,
 .reset:hover{
@@ -87,19 +85,22 @@ body {
     color: #ddd;
     margin: 4rem;
     font-size: 4rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
     /* repeat(auto-fit, minmax(32rem, 1fr)); */
-    grid-gap: 6rem;
-    align-items: center;
+    /* grid-gap: 6rem; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 121vh;
 }
 
 .result table {
-    margin: 2rem;
-    background-color: #fff;
+    margin: 4rem;
+    background-color:#fff;
     color: #141e30;
-    height: 50%;
-    padding: 2rem;
+    height: 100%;
+    width: 20%;
+    padding: 3rem;
     text-align: center;
 }
 
@@ -114,4 +115,42 @@ body {
     position: fixed;
     bottom: 0;
     padding: 5rem;
+}
+
+@media only screen and (max-width: 1300px){
+
+.result {
+    /* width: 130vh; */
+    width: 95vh;
+}
+
+html {
+/* font-size: 62.5%; */
+font-size: 59%;
+}
+
+.result table {
+/* width: 20%; */
+width: 19%;
+}
+  
+}
+
+@media only screen and (max-width: 1000px){
+
+.result {
+    /* width: 95vh; */
+    width: 57vh;
+}
+.result table {
+    /* width: 19%; */
+    width: 40%;
+}
+
+#textBox:hover, #textBox:valid {
+    /* width: 110rem; */
+    width: 70rem;
+}
+  
+
 }
