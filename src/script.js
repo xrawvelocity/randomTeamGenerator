@@ -27,7 +27,7 @@
 
 
     //get input into variables
-    namesArray = [...form.teamNames.value.split(', ')];
+    namesArray = [...form.teamNames.value.split(',')];
     peoplePerTeam = form.teamNumbers.value;
     
     numOfTeams = Math.floor(namesArray.length / peoplePerTeam);
@@ -44,19 +44,22 @@
     }
 
     }
+    console.log(bigArray)
     for(i = 0; i < bigArray.length; i++){
-      for(x = 0; x < bigArray[i].length; x++){
-        name2 = `<tr id="name"><td>${bigArray[i][x]}</td></tr>`;
+      //for(x = 0; x < bigArray[i].length; x++){
+        console.log(bigArray[i])
+        name2 = `<tr id="name"><td>${bigArray[i].join('</td></tr><tr id="name"><td>')}</td></tr>`;
         html = `
           <table class="table">
             <thead><th>Team %num%</th></thead>
-            ${name2.repeat(bigArray[i].length)}
+              ${name2}
           </table>
           `;
         
         console.log(name2);
+            // ${name2.repeat(bigArray[i].length)}
         
-      }
+      //}
       //${'<tr id="name"><td>%name%</td></tr>'.repeat(bigArray[i].length)}
 
     let newhtml = html.replace('%num%', i + 1 );
