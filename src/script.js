@@ -45,15 +45,24 @@
 
     }
     for(i = 0; i < bigArray.length; i++){
-    html = `
-    <table class="table">
-      <thead><th>Team %num%</th></thead>
-      ${'<tr><td>%name%</td></tr>'.repeat(peoplePerTeam)}
-    </table>
-    `;
+      for(x = 0; x < bigArray[i].length; x++){
+        name2 = `<tr id="name"><td>${bigArray[i][x]}</td></tr>`;
+        html = `
+          <table class="table">
+            <thead><th>Team %num%</th></thead>
+            ${name2.repeat(bigArray[i].length)}
+          </table>
+          `;
+        
+        console.log(name2);
+        
+      }
+      //${'<tr id="name"><td>%name%</td></tr>'.repeat(bigArray[i].length)}
 
     let newhtml = html.replace('%num%', i + 1 );
-    newhtml = newhtml.replace('%name%', bigArray[0][1]);
+    console.log(newhtml);
+    //newhtml = newhtml.replace('%name%', bigArray[0][1]);
+    
     result.insertAdjacentHTML("beforeend", newhtml);
     }
 
