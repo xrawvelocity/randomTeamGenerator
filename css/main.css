@@ -91,7 +91,8 @@ body {
     margin: 4rem;
     font-size: 4rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    grid-template-columns: repeat(autofit, 1fr);
+    /* repeat(auto-fit, minmax(32rem, 1fr)); */
     grid-gap: 6rem;
     align-items: center;
 }

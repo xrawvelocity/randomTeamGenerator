@@ -36,11 +36,14 @@
     var totalTeams = (namesArray.length/numOfTeams);  
 
     var temparray,piece = totalTeams;
-    for (i = 0, j= namesArray.length; i<j; i+=piece) {
+    
+
+    if(!bigArray.length){
+      for (i = 0, j= namesArray.length; i<j; i+=piece) {
         temparray = namesArray.slice(i,i+piece);
         bigArray.push(temparray);
     }
-
+    }
     for(i = 0; i < bigArray.length; i++){
     html = `
     <table class="table">
