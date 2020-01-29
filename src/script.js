@@ -30,20 +30,19 @@
     namesArray = [...form.teamNames.value.split(', ')];
     peoplePerTeam = form.teamNumbers.value;
     
+
+    //randomize array
     numOfTeams = Math.floor(namesArray.length / peoplePerTeam);
-
     var totalTeams = (namesArray.length/numOfTeams);  
-
     var temparray,piece = totalTeams;
-    
-
     if(!bigArray.length){
       for (i = 0, j= namesArray.length; i<j; i+=piece) {
         temparray = namesArray.slice(i,i+piece);
         bigArray.push(temparray);
+      }
     }
 
-    }
+    ////////////////
     for(i = 0; i < bigArray.length; i++){
       for(x = 0; x < bigArray[i].length; x++){
         name2 = `<tr id="name"><td>${bigArray[i][x]}</td></tr>`;
@@ -72,6 +71,7 @@
     //console.log(html);
     
     console.log(bigArray);
+    
   
   };
 
@@ -86,3 +86,8 @@ reset.onclick = e => {
   console.log('working');
 };
 
+document.addEventListener('click', e => {
+  if(e.target.parentElement.className == 'table'){
+    console.log(e.target.children[1].children);
+  }
+});
