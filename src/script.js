@@ -1,5 +1,33 @@
 /*jshint esversion: 9*/
   
+/////////////////////////////////////////
+
+// var names = ['jim','jake','jimes','rob','paps','richie', 'max', 'eric', 'soul', 'ack', ' in'];
+// names.sort(function(){
+//     return Math.round(Math.random()) - 0.5;
+// });
+// let round = 0
+// let noPerTeam = 3
+// if (names){
+// if (names.length % noPerTeam === 0){
+//   round = (names.length / noPerTeam)
+// } else {
+//   round = (names.length / noPerTeam) }
+// }
+// let noOfTeams = Math.floor(round)
+// var totalTeams = Math.ceil(names.length/noOfTeams);  
+
+// var i,j,temparray,piece = totalTeams;
+// for (i = 0, j= names.length; i<j; i+=piece) {
+//     temparray = names.slice(i,i+piece);
+//     console.log(temparray);
+// }
+// console.log(noOfTeams)
+// console.log(round)
+
+
+
+/////////////////////////////////////////
 
   /* VARIABLES */
   let namesArray = [];
@@ -21,10 +49,6 @@
     //dont clear values of inputs
     e.preventDefault();
 
-    //margin: 40rem auto 5rem auto;
-    //make the space on top smaller on click
-    //heading.style.margin = '10rem auto 5rem auto';
-
     //flip buttons
     makeTeams.style.zIndex = '-10';
     makeTeams.style.display = 'none';
@@ -34,6 +58,8 @@
     namesArray = [...form.teamNames.value.split(',')];
     peoplePerTeam = form.teamNumbers.value;
     
+    namesArray.sort(() => Math.round(Math.random()) - 0.5);
+
     numOfTeams = Math.floor(namesArray.length / peoplePerTeam);
 
     var totalTeams = (namesArray.length/numOfTeams);  
