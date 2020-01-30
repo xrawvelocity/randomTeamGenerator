@@ -10,6 +10,8 @@
 
     --bg-blue-3: #2b5e99;
     --bg-blue-4: #152e5c;
+    --bg-blue-5: #32c3ff;
+    --bg-blue-6: #1988b8;
 
     --light-gray-1: #eee;
     --light-gray-2: #ddd;
@@ -54,11 +56,12 @@ body {
 
 #team-form > * > *:not(:first-child):not(:last-child) {
     margin: 2.5rem;
-    border-radius: 0;
+    border-radius: 1rem;
     border: none;
     padding: 1.4rem;
     background-color: var(--light-gray-2);
     transition: background-color .2s, width .5s cubic-bezier(0.23, 1, 0.32, 1), height .5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: black 8px 1rem 10px 1px;;
 }
 
 #team-form > *:focus:not(:last-child){
@@ -73,7 +76,9 @@ body {
     overflow:hidden;
     resize:none;
 }
-
+.teamNames{
+    border-radius: 1 rem;
+}
 
 
 #team-numbers {
@@ -100,7 +105,7 @@ body {
     border: none;
     padding: 1.4rem;
     outline:none;
-    transition: all .1s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
  #team-btn::-moz-focus-inner,
@@ -120,22 +125,24 @@ body {
     top: 0;
     left: 0;
     z-index: 10;
-    background-color: var(--btn-red-1);
+    background-color: #1988b8;
     font-size: 2rem;
     font-weight: 700;
     color: var(--white-1);
     transform: translate(-7rem, -48.5rem);
+    box-shadow: 8px 1rem 1rem black
 }
 
 .reset{
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: var(--black-1);
-    color: var(--white-1);
+    background-color: var(--white-1);
+    color: var(--bg-blue-6);
     font-size: 2rem;
     font-weight: 700;
     transform: translate(20.5rem, -48.5rem);
+    box-shadow: 8px 1rem 1rem black
 }
 
 .result {
@@ -167,7 +174,7 @@ body {
     border-bottom: 2px solid var(--black-1);
     padding: 2rem 0;
     color: var(--white-1);
-    background-image: linear-gradient(to right, var(--bg-blue-3),var(--bg-blue-4));
+    background-image: linear-gradient(to right, var(--bg-blue-5),var(--bg-blue-6));
 }
 
 .result table tbody > * {

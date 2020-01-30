@@ -40,17 +40,19 @@
 
     var temparray,piece = totalTeams;
     
-
-    if(!bigArray.length){
+      if(!bigArray.length){
       for (i = 0, j= namesArray.length; i<j; i+=piece) {
         temparray = namesArray.slice(i,i+piece);
+       
         bigArray.push(temparray);
+        console.log(temparray)
+         console.log(piece)
       }
     }
 
     
     for(i = 0; i < bigArray.length; i++){
-      name2 = `<tr id="name"><td>${bigArray[i].join('</td></tr><tr id="name"><td>')}</td></tr>`;
+            name2 = `<tr id="name"><td>${bigArray[i].join('</td></tr><tr id="name"><td>')}</td></tr>`;
       html = `
         <table class="table">
           <thead><th>Team %num%</th></thead>
