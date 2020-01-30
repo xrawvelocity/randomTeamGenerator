@@ -1,0 +1,22 @@
+{
+  "name": "randomteamgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xrawvelocity/randomTeamGenerator.git"
+  },
+  "author": "Victor Fernandez & Melvin Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xrawvelocity/randomTeamGenerator/issues"
+  },
+  "homepage": "https://github.com/xrawvelocity/randomTeamGenerator#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}

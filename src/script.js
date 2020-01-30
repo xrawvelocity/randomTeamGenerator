@@ -73,3 +73,4 @@ reset.onclick = () => {
   bigArray = [];
 };
 
+
