@@ -13,8 +13,8 @@
   let result = document.querySelector('.result');
   let table = document.querySelectorAll('.table');
   let heading = document.querySelector('.heading-1');
-  console.log(table);
-
+  let makeTeams = document.getElementById('team-btn');
+  
   //when the 'make teams' button is clicked do this
   form.onsubmit = e => {
 
@@ -23,8 +23,12 @@
 
     //margin: 40rem auto 5rem auto;
     //make the space on top smaller on click
-    heading.style.margin = '10rem auto 5rem auto';
+    //heading.style.margin = '10rem auto 5rem auto';
 
+    //flip buttons
+    makeTeams.style.zIndex = '-10';
+    makeTeams.style.display = 'none';
+    reset.style.zIndex = '10';
 
     //get input into variables
     namesArray = [...form.teamNames.value.split(',')];
@@ -62,11 +66,16 @@
 
 /* when the 'reset' button is clicked do this */
 
-reset.onclick = e => {
+reset.onclick = () => {
+  //flip buttons
+  makeTeams.style.zIndex = '10';
+  makeTeams.style.display = 'inline';
+  reset.style.zIndex = '-10';
+
   result.innerHTML = '';
   namesArray = [];
   bigArray = [];
-  heading.style.margin = '40rem auto 5rem auto';
+  //heading.style.margin = '40rem auto 5rem auto';
   console.log('working');
 };
 

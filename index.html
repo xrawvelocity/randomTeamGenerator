@@ -11,13 +11,17 @@
     <h1 class="heading-1">Random Team Generator</h1>
     <div id="team-form">
         <form id="team-form--2">
-            <input type="text" name="teamNames" id="textBox" placeholder="Write all the names here separated by commas" required>
+            <!-- <input type="text" name="teamNames" id="textBox" placeholder="Write all the names here separated by commas" required> -->
+            <div class="empty">&nbsp;</div>
+            <textarea name="teamNames" id="textBox" rows="14" cols="10" wrap="soft" maxlength="400" placeholder="Write all the names here separated by commas" required></textarea>
             <input type="number" id="team-numbers" name="teamNumbers" min="1" max="10" placeholder="People per team. Min: 1, Max: 10." required>
-            <input type="submit" value="Make Teams" id="team-btn">           
+            <div class="btns">
+                <input type="submit" value="Make Teams" id="team-btn">  
+            </div>
+                     
         </form>
-        <div class="test">
-            <button class="reset">Reset</button>
-
+       <div class="btns">
+           <button class="reset">Reset</button>
         </div>
     </div>
     
@@ -25,6 +29,6 @@
         
     </div>
     <div class="copy">&copy; Victor Fernandez & Melvin Gonzalez</div>
-    <script src="src/script.js"></script>
+    <script defer src="src/script.js"></script>
 </body>
 </html>
