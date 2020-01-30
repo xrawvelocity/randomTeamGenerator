@@ -9,7 +9,7 @@
 // let round = 0
 // let noPerTeam = 3
 // if (names){
-// if (names.length % noPerTeam === 0){
+// if (names.length % noPerTeam === 0){git
 //   round = (names.length / noPerTeam)
 // } else {
 //   round = (names.length / noPerTeam) }
