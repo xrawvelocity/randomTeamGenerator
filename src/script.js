@@ -2,36 +2,9 @@
   
 /////////////////////////////////////////
 
-// var names = ['jim','jake','jimes','rob','paps','richie', 'max', 'eric', 'soul', 'ack', ' in'];
-// names.sort(function(){
-//     return Math.round(Math.random()) - 0.5;
-// });
-// let round = 0
-// let noPerTeam = 3
-// if (names){
-// if (names.length % noPerTeam === 0){git
-//   round = (names.length / noPerTeam)
-// } else {
-//   round = (names.length / noPerTeam) }
-// }
-// let noOfTeams = Math.floor(round)
-// var totalTeams = Math.ceil(names.length/noOfTeams);  
-
-// var i,j,temparray,piece = totalTeams;
-// for (i = 0, j= names.length; i<j; i+=piece) {
-//     temparray = names.slice(i,i+piece);
-//     console.log(temparray);
-// }
-// console.log(noOfTeams)
-// console.log(round)
-
-
-
-/////////////////////////////////////////
-
   /* VARIABLES */
   let namesArray = [];
-  let peoplePerTeam, numOfTeams, html;
+  let peoplePerTeam, numOfTeams, html, totalTeams, temparray;
   let round = 0;
   let bigArray = [];
 
@@ -57,28 +30,22 @@
     //get input into variables
     namesArray = [...form.teamNames.value.split(',')];
     peoplePerTeam = form.teamNumbers.value;
-    
+
+    // name randomizer
     namesArray.sort(() => Math.round(Math.random()) - 0.5);
-
     numOfTeams = Math.floor(namesArray.length / peoplePerTeam);
-
-    var totalTeams = (namesArray.length/numOfTeams);  
-
-    var temparray,piece = totalTeams;
-    
-      if(!bigArray.length){
-      for (i = 0, j= namesArray.length; i<j; i+=piece) {
-        temparray = namesArray.slice(i,i+piece);
-       
+    totalTeams = (namesArray.length/numOfTeams);  
+    temparray = totalTeams;
+    if(!bigArray.length){
+      for (i = 0, j= namesArray.length; i<j; i+=totalTeams) {
+        temparray = namesArray.slice(i,i+totalTeams);
         bigArray.push(temparray);
-        console.log(temparray)
-         console.log(piece)
       }
     }
 
-    
+    // adds team tables to html
     for(i = 0; i < bigArray.length; i++){
-            name2 = `<tr id="name"><td>${bigArray[i].join('</td></tr><tr id="name"><td>')}</td></tr>`;
+      name2 = `<tr id="name"><td>${bigArray[i].join('</td></tr><tr id="name"><td>')}</td></tr>`;
       html = `
         <table class="table">
           <thead><th>Team %num%</th></thead>
@@ -99,11 +66,10 @@ reset.onclick = () => {
   makeTeams.style.zIndex = '10';
   makeTeams.style.display = 'inline';
   reset.style.zIndex = '-10';
-
+  
+  //delete tables
   result.innerHTML = '';
   namesArray = [];
   bigArray = [];
-  //heading.style.margin = '40rem auto 5rem auto';
-  console.log('working');
 };
 
